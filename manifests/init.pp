@@ -3,7 +3,7 @@
 # Installs Composer
 class composer (
     $install_location = $composer::params::install_location,
-    $filename         = $composer::params::params_lookup,
+    $filename         = $composer::params::filename,
 ) inherits composer::params {
 
   exec { "curl -sS https://getcomposer.org/installer | php -- --install-dir=/home/vagrant && mv /home/vagrant/composer.phar ${install_location}/${filename}":
